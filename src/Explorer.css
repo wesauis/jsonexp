@@ -34,3 +34,23 @@ td {
 .object > table {
   margin-bottom: 0.5em;
 }
+
+.key-text {
+  color: #48d7c3;
+}
+
+.value .null {
+  color: #719df4;
+}
+
+.value .string {
+  color: #8ec061;
+}
+
+.value .number {
+  color: #c975f0;
+}
+
+.value .boolean {
+  color: #ff69b4;
+}

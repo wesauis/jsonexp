@@ -9,7 +9,9 @@ function mapEntry([key, value]: [string, any]): ReactElement {
   if (mapType(value) == GridType.Scalar) {
     return (
       <tr key={key}>
-        <td className="key">{key}</td>
+        <td className="key">
+          <span className="key-text">{key}</span>
+        </td>
         <td className="value">
           <MapType json={value} />
         </td>
@@ -20,7 +22,7 @@ function mapEntry([key, value]: [string, any]): ReactElement {
   return (
     <tr key={key}>
       <td className="object" colSpan={2}>
-        {key}
+        <span className="key-text">{key}</span>
         <MapType json={value} />
       </td>
     </tr>
