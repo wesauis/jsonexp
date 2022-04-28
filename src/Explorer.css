@@ -17,7 +17,7 @@ td {
   border: none;
 }
 
-.array-item table {
+.array-item > table {
   width: 100%;
 }
 
@@ -29,4 +29,8 @@ td {
 .array:not(.empty) {
   margin-top: -0.5em;
   margin-bottom: -0.25em;
+}
+
+.object > table {
+  margin-bottom: 0.5em;
 }
