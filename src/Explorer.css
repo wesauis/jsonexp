@@ -1,0 +1,42 @@
+table,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0.25em 0.75em;
+  vertical-align: top;
+
+  background-color: #ffffff04;
+}
+
+.object {
+  /* Rotate from top left corner (not default) */
+}
+
+/*
+
+
+
+
+.key {
+  text-align: end;
+}
+
+.value {
+  text-align: start;
+}
+
+.value table {
+  padding: 0;
+}
+
+table .object + .value {
+  padding: 0;
+  border: none;
+}
+
+table .array {
+  border:none;
+} */
