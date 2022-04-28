@@ -8,7 +8,7 @@ interface GridArrayProps {
 function mapItem(item: any, index: number): ReactElement {
   return (
     <tr key={index}>
-      <td>
+      <td className="array-item">
         <MapType key={index} json={item} />
       </td>
     </tr>
@@ -16,8 +16,12 @@ function mapItem(item: any, index: number): ReactElement {
 }
 
 const GridArray: FC<GridArrayProps> = ({ array }) => {
+  let classList = "array";
+
+  if (!array.length) classList += " empty";
+
   return (
-    <table className="array">
+    <table className={classList}>
       <tbody>{array.map(mapItem)}</tbody>
     </table>
   );

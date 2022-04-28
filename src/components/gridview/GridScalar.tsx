@@ -5,7 +5,7 @@ interface GridScalarProps {
 }
 
 const GridScalar: FC<GridScalarProps> = ({ value }) => {
-  return value;
+  return <span>{String(value)}</span>;
 };
 
 export default GridScalar;

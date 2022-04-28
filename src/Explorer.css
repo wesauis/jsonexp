@@ -1,6 +1,6 @@
 table,
 td {
-  border: 1px solid gray;
+  border: 1px solid #ffffff12;
   border-collapse: collapse;
 }
 
@@ -11,32 +11,22 @@ td {
   background-color: #ffffff04;
 }
 
-.object {
-  /* Rotate from top left corner (not default) */
-}
-
-/*
-
-
-
-
-.key {
-  text-align: end;
-}
-
-.value {
-  text-align: start;
-}
-
-.value table {
-  padding: 0;
-}
-
-table .object + .value {
+.array,
+.array-item {
   padding: 0;
   border: none;
 }
 
-table .array {
-  border:none;
-} */
+.array-item table {
+  width: 100%;
+}
+
+.array {
+  border-collapse: separate;
+  border-spacing: 0 0.75em;
+}
+
+.array:not(.empty) {
+  margin-top: -0.5em;
+  margin-bottom: -0.25em;
+}
