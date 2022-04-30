@@ -9,7 +9,9 @@ function Explorer() {
   useEffect(() => {
     const hash = window.location.hash.substring(1);
     if (!hash.startsWith("$")) return;
+    if (hash == pathContext.path) return;
 
+    console.log("Using base path:", hash);
     pathContext.setPath(hash);
   }, []);
 
