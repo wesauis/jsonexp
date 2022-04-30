@@ -1,17 +1,19 @@
+@use "../theme";
+
 .GridView {
-  .null {
-    color: #719df4;
+  .json-null {
+    color: theme.$json-null;
   }
 
-  .string {
-    color: #7cb649;
+  .json-string {
+    color: theme.$json-string;
   }
 
-  .number {
-    color: #c975f0;
+  .json-number {
+    color: theme.$json-number;
   }
 
-  .boolean {
-    color: #ff69b4;
+  .json-boolean {
+    color: theme.$json-boolean;
   }
 }

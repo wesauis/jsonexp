@@ -39,7 +39,7 @@ function renderScalar(
     <tr key={key}>
       <td>
         <a href={`#${path}`}>
-          <span className="key-text">{key}</span>
+          <span className="json-key">{key}</span>
         </a>
       </td>
       <td>
@@ -57,7 +57,7 @@ function renderObject(path: string, key: string, value: [] | {}): ReactElement {
     <tr key={key}>
       <td className="object-value" colSpan={2}>
         <a href={`#${path}`}>
-          <span className="key-text">{key}</span>
+          <span className={`json-key`}>{key}</span>
           <span className="length">
             {isArray ? `[${length}]` : `{${length}}`}
           </span>

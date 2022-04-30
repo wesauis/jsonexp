@@ -1,10 +1,12 @@
+@use "../theme";
+
 .GridView .object {
-  .key-text {
-    color: #48d7c3;
+  .json-key {
+    color: theme.$json-key;
   }
 
   .length {
-    color: #f0c544;
+    color: theme.$json-length;
   }
 
   .object-value > table {

@@ -14,8 +14,8 @@ const GridScalar: FC<GridScalarProps> = ({ value }) => {
 /** JSON "Scalar" Types */
 export type TypeClass = "null" | "string" | "number" | "boolean";
 
-function typeClassOf(value: string): TypeClass {
-  return value === null ? "null" : (typeof value as TypeClass);
+function typeClassOf(value: string): `json-${TypeClass}` {
+  return value === null ? "json-null" : `json-${typeof value as TypeClass}`;
 }
 
 export default GridScalar;
