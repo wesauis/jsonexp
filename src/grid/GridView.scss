@@ -1,0 +1,22 @@
+.GridView {
+  table,
+  td {
+    border: 1px solid #ffffff12;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 0.25em 0.75em;
+    vertical-align: top;
+
+    background-color: #ffffff04;
+  }
+
+  tr:hover {
+    background-color: #ffffff08;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,4 +1,3 @@
-import "./Explorer.css";
 import GridView from "./grid/GridView";
 import sample from "./sample.json";
 

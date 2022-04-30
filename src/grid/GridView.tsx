@@ -17,4 +17,8 @@ const GridView: FC<GridViewProps> = ({ json }) => {
   );
 };
 
+export interface Querryble {
+  path: string;
+}
+
 export default GridView;
