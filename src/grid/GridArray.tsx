@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactNode } from "react";
 import "./GridArray.scss";
 import MapType from "./MapType";
 
@@ -19,7 +19,7 @@ const GridArray: FC<GridArrayProps> = ({ path, array }) => {
   );
 };
 
-function mapItem(path: string, index: number, item: any): ReactElement {
+function mapItem(path: string, index: number, item: any): ReactNode {
   return (
     <tr key={index}>
       <td className="item">

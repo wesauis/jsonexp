@@ -1,0 +1,19 @@
+@use "../theme";
+
+.BreadcrumbItem {
+  margin-left: 1ch;
+  margin-right: 1ch;
+
+  background-color: #ffffff08;
+  padding: 0.5ch 1ch;
+  border-radius: 3px;
+
+  a {
+    text-decoration: none;
+    color: theme.$neutral-text;
+  }
+
+  &.active a {
+    color: theme.$primary-text;
+  }
+}
