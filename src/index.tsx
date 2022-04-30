@@ -1,8 +1,8 @@
+import "modern-css-reset/dist/reset.min.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "modern-css-reset/dist/reset.min.css";
-import "./index.css";
 import Explorer from "./Explorer";
+import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(

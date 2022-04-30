@@ -1,5 +1,5 @@
-import GridView from "./components/gridview/GridView";
 import "./Explorer.css";
+import GridView from "./grid/GridView";
 import sample from "./sample.json";
 
 function Explorer() {

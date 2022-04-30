@@ -1,4 +1,5 @@
 import { FC } from "react";
+import "./GridScalar.scss";
 
 interface GridScalarProps {
   value: any;
@@ -9,7 +10,7 @@ function typeClassOf(value: string) {
 }
 
 const GridScalar: FC<GridScalarProps> = ({ value }) => {
-  const typeClass = typeClassOf(value);
+  const typeClass = "GridScalar " + typeClassOf(value);
 
   return <span className={typeClass}>{String(value)}</span>;
 };

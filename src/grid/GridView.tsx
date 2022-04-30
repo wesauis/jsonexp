@@ -1,4 +1,6 @@
+import jsonpath from "jsonpath";
 import { FC } from "react";
+import "./GridView.scss";
 import MapType from "./MapType";
 
 export interface GridViewProps {
@@ -6,9 +8,11 @@ export interface GridViewProps {
 }
 
 const GridView: FC<GridViewProps> = ({ json }) => {
+  const part = jsonpath.query(json, "$");
+
   return (
-    <div>
-      <MapType json={json} />
+    <div className="GridView">
+      <MapType path="$" json={part} />
     </div>
   );
 };

@@ -22,15 +22,16 @@ export function mapType(json: any): GridType {
 }
 
 interface MapTypeProps {
+  path: string;
   json: any;
 }
 
-const MapType: FC<MapTypeProps> = ({ json }) => {
+const MapType: FC<MapTypeProps> = ({ path, json }) => {
   switch (mapType(json)) {
     case GridType.Object:
-      return <GridObject object={json} />;
+      return <GridObject path={path} object={json} />;
     case GridType.Array:
-      return <GridArray array={json} />;
+      return <GridArray path={path} array={json} />;
     case GridType.Scalar:
       return <GridScalar value={json} />;
     default:
