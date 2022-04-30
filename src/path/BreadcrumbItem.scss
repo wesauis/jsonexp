@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../theme";
 
 .BreadcrumbItem {
@@ -15,5 +16,9 @@
 
   &.active a {
     color: theme.$primary-text;
+  }
+
+  &.virtual a {
+    color: color.adjust(theme.$neutral-text, $alpha: -0.35);
   }
 }

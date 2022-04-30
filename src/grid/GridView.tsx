@@ -1,5 +1,5 @@
 import jsonpath from "jsonpath";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { usePathContext } from "../path/PathContext";
 import "./GridView.scss";
 import MapType from "./MapType";
@@ -14,8 +14,10 @@ const GridView: FC<GridViewProps> = ({ json }) => {
   const parts = jsonpath.query(json, path);
   const activeParts = parts.length == 1 ? parts[0] : parts;
 
-  console.log("The rendered json is avaliable at window.json!");
-  (window as any).json = activeParts;
+  useEffect(() => {
+    console.log("The rendered json is avaliable at window.json!");
+    (window as any).json = activeParts;
+  }, [activeParts]);
 
   return (
     <div className="GridView">

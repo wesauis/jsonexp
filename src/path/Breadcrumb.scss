@@ -9,6 +9,7 @@
   min-width: 100%;
 
   padding: 0.5em;
+  padding-top: 0.75em;
 
   background-color: color.adjust(theme.$neutral-surface, $alpha: -0.25);
   backdrop-filter: blur(3px);

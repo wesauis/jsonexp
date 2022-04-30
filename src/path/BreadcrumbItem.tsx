@@ -6,12 +6,21 @@ import PathButton from "./PathButton";
 interface BreadcrumbItemProps {
   path: string;
   item: PathItem;
-  isLast: boolean;
+  isLast?: boolean;
+  isActive?: boolean;
+  isVirtual?: boolean;
 }
 
-const BreadcrumbItem: FC<BreadcrumbItemProps> = ({ path, item, isLast }) => {
+const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
+  path,
+  item,
+  isLast,
+  isActive,
+  isVirtual,
+}) => {
   let classList = "BreadcrumbItem";
-  if (isLast) classList += " active";
+  if (isActive) classList += " active";
+  if (isVirtual) classList += " virtual";
 
   return (
     <>
