@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import GridView from "./grid/GridView";
+import Breadcrumb from "./path/Breadcrumb";
 import PathContext, { useNewPathContext } from "./path/PathContext";
 import sample from "./sample.json";
 
@@ -17,6 +18,7 @@ function Explorer() {
 
   return (
     <PathContext.Provider value={pathContext}>
+      <Breadcrumb />
       <GridView json={sample} />
     </PathContext.Provider>
   );
