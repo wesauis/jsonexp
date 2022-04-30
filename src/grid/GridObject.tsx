@@ -1,4 +1,5 @@
 import { FC, ReactElement } from "react";
+import PathButton from "../path/PathButton";
 import "./GridObject.scss";
 import GridScalar from "./GridScalar";
 import { Querryble } from "./GridView";
@@ -38,9 +39,9 @@ function renderScalar(
   return (
     <tr key={key}>
       <td>
-        <a href={`#${path}`}>
+        <PathButton path={path}>
           <span className="json-key">{key}</span>
-        </a>
+        </PathButton>
       </td>
       <td>
         <GridScalar value={value} />
@@ -56,12 +57,12 @@ function renderObject(path: string, key: string, value: [] | {}): ReactElement {
   return (
     <tr key={key}>
       <td className="object-value" colSpan={2}>
-        <a href={`#${path}`}>
+        <PathButton path={path}>
           <span className={`json-key`}>{key}</span>
           <span className="length">
             {isArray ? `[${length}]` : `{${length}}`}
           </span>
-        </a>
+        </PathButton>
         <MapType path={path} json={value} />
       </td>
     </tr>

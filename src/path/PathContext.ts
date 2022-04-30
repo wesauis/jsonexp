@@ -3,6 +3,8 @@ import { createContext, useContext, useState } from "react";
 export interface PathContextValue {
   path: string;
   setPath(path: string): void;
+  vpath: string;
+  setVPath(path: string): void;
 }
 
 export const defaultPath = "$";
@@ -14,7 +16,8 @@ const PathContext = createContext({
 
 export function useNewPathContext(): PathContextValue {
   const [path, setPath] = useState(defaultPath);
-  return { path, setPath };
+  const [vpath, setVPath] = useState(defaultPath);
+  return { path, setPath, vpath, setVPath };
 }
 
 export function usePathContext(): PathContextValue {

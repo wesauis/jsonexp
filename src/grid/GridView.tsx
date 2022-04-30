@@ -11,11 +11,12 @@ export interface GridViewProps {
 const GridView: FC<GridViewProps> = ({ json }) => {
   const { path } = usePathContext();
 
-  const part = jsonpath.query(json, path);
+  const parts = jsonpath.query(json, path);
+  const activeParts = parts.length == 1 ? parts[0] : parts;
 
   return (
     <div className="GridView">
-      <MapType path={path} json={part} />
+      <MapType path={path} json={activeParts} />
     </div>
   );
 };
