@@ -1,15 +1,17 @@
-.GridObject .value .GridScalar.null {
-  color: #719df4;
-}
+.GridView {
+  .null {
+    color: #719df4;
+  }
 
-.GridObject .value .GridScalar.string {
-  color: #7cb649;
-}
+  .string {
+    color: #7cb649;
+  }
 
-.GridObject .value .GridScalar.number {
-  color: #c975f0;
-}
+  .number {
+    color: #c975f0;
+  }
 
-.GridObject .value .GridScalar.boolean {
-  color: #ff69b4;
+  .boolean {
+    color: #ff69b4;
+  }
 }
