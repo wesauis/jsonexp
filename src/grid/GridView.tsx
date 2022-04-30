@@ -1,5 +1,6 @@
 import jsonpath from "jsonpath";
 import { FC } from "react";
+import { usePathContext } from "../path/PathContext";
 import "./GridView.scss";
 import MapType from "./MapType";
 
@@ -8,11 +9,13 @@ export interface GridViewProps {
 }
 
 const GridView: FC<GridViewProps> = ({ json }) => {
-  const part = jsonpath.query(json, "$");
+  const { path } = usePathContext();
+
+  const part = jsonpath.query(json, path);
 
   return (
     <div className="GridView">
-      <MapType path="$" json={part} />
+      <MapType path={path} json={part} />
     </div>
   );
 };
