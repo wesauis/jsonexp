@@ -1,0 +1,13 @@
+@use 'theme.scss';
+
+html,
+body {
+  background-color: theme.$neutral-surface;
+  color: theme.$neutral-text;
+}
+
+body,
+code {
+  font-family: theme.$font-family;
+  font-weight: theme.$fw-regular;
+}

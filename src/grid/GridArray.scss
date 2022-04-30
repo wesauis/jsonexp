@@ -1,0 +1,19 @@
+.GridView .array {
+  border-collapse: separate;
+  border-spacing: 0 0.75em;
+
+  &:not(.empty) {
+    margin-top: -0.5em;
+    margin-bottom: -0.25em;
+  }
+
+  &,
+  & .item {
+    padding: 0;
+    border: none;
+  }
+
+  & .item > table {
+    width: 100%;
+  }
+}

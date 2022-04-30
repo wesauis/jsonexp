@@ -1,5 +1,6 @@
 {
   "name": "jsonexp",
+  "description": "JSON Explorer",
   "version": "0.1.0",
   "license": "MIT",
   "author": "wesauis",
@@ -45,10 +46,16 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "jsonpath": "^1.1.1",
+    "modern-css-reset": "^1.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.51.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/jsonpath": "^0.2.0"
   }
 }

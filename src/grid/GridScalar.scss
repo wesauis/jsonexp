@@ -1,0 +1,19 @@
+@use "../theme";
+
+.GridView {
+  .json-null {
+    color: theme.$json-null;
+  }
+
+  .json-string {
+    color: theme.$json-string;
+  }
+
+  .json-number {
+    color: theme.$json-number;
+  }
+
+  .json-boolean {
+    color: theme.$json-boolean;
+  }
+}

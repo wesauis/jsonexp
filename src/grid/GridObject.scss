@@ -1,0 +1,15 @@
+@use "../theme";
+
+.GridView .object {
+  .json-key {
+    color: theme.$json-key;
+  }
+
+  .length {
+    color: theme.$json-length;
+  }
+
+  .object-value > table {
+    margin-bottom: 0.5em;
+  }
+}
