@@ -22,5 +22,16 @@
   "offline_enabled": true,
   "background": {
     "service_worker": "backend.js"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "index.html"
+      ],
+      "matches": [
+        "*://*/*",
+        "<all_urls>"
+      ]
+    }
+  ]
 }

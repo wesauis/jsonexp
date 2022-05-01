@@ -39,14 +39,3 @@ function injectInterceptor(frameId, tabId) {
     () => console.log("Injected bootstrapper")
   );
 }
-
-async function readFile(filename) {
-  return await fetch(chrome.runtime.getURL(filename)).then((res) => res.text());
-}
-
-chrome.runtime.onMessage.addListener(async ({ cmd }, sender, sendResponse) => {
-  if (cmd !== "GET_INDEX") return;
-
-  const html = await readFile("index.html");
-  sendResponse({ html });
-});
