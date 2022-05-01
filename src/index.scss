@@ -4,6 +4,8 @@ html,
 body {
   background-color: theme.$neutral-surface;
   color: theme.$neutral-text;
+
+  scroll-behavior: smooth;
 }
 
 body {

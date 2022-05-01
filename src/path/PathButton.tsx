@@ -12,6 +12,7 @@ const PathButton: FC<PathButtonProps> = ({ path, children }) => {
 
   function handleClick() {
     setPath(path);
+    window.scrollTo(0, 0);
   }
 
   function handleHover() {
