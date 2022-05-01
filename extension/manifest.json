@@ -12,7 +12,8 @@
     "512": "logo512.png"
   },
   "permissions": [
-    "webRequest"
+    "webRequest",
+    "scripting"
   ],
   "host_permissions": [
     "*://*/*",
@@ -20,6 +21,6 @@
   ],
   "offline_enabled": true,
   "background": {
-    "service_worker": "extension/main.js"
+    "service_worker": "backend.js"
   }
 }
