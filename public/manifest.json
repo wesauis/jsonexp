@@ -2,13 +2,7 @@
   "short_name": "jsonexp",
   "name": "JSON Explorer",
   "version": "1.0",
-  "action": {
-    "default_popup": "index.html",
-    "default_title": "JSON Explorer"
-  },
-  "permissions": [
-    "activeTab"
-  ],
+  "manifest_version": 3,
   "icons": {
     "16": "favicon.ico",
     "24": "favicon.ico",
@@ -17,5 +11,15 @@
     "192": "logo192.png",
     "512": "logo512.png"
   },
-  "manifest_version": 3
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "<all_urls>"
+  ],
+  "offline_enabled": true,
+  "background": {
+    "service_worker": "extension/main.js"
+  }
 }
