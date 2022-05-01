@@ -57,13 +57,14 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.31",
     "@types/chrome": "^0.0.183",
     "@types/gulp": "^4.0.9",
     "@types/jsonpath": "^0.2.0",
+    "cheerio": "^1.0.0-rc.10",
     "gulp": "^4.0.2",
     "gulp-esbuild": "^0.10.3",
     "gulp-inline-source": "^4.0.0",
-    "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.3",
     "gulp-template": "^5.0.0",
     "inline-csp-hash": "^1.1.15"

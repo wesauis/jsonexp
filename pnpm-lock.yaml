@@ -4,6 +4,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.14.1
   '@testing-library/react': ^13.0.0
   '@testing-library/user-event': ^13.2.1
+  '@types/cheerio': ^0.22.31
   '@types/chrome': ^0.0.183
   '@types/gulp': ^4.0.9
   '@types/jest': ^27.0.1
@@ -11,10 +12,10 @@ specifiers:
   '@types/node': ^16.7.13
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
+  cheerio: ^1.0.0-rc.10
   gulp: ^4.0.2
   gulp-esbuild: ^0.10.3
   gulp-inline-source: ^4.0.0
-  gulp-rename: ^2.0.0
   gulp-replace: ^1.1.3
   gulp-template: ^5.0.0
   inline-csp-hash: ^1.1.15
@@ -45,13 +46,14 @@ dependencies:
   web-vitals: 2.1.4
 
 devDependencies:
+  '@types/cheerio': 0.22.31
   '@types/chrome': 0.0.183
   '@types/gulp': 4.0.9
   '@types/jsonpath': 0.2.0
+  cheerio: 1.0.0-rc.10
   gulp: 4.0.2
   gulp-esbuild: 0.10.3
   gulp-inline-source: 4.0.0
-  gulp-rename: 2.0.0
   gulp-replace: 1.1.3
   gulp-template: 5.0.0
   inline-csp-hash: 1.1.15
@@ -2168,6 +2170,12 @@ packages:
     dependencies:
       '@types/node': 16.11.31
     dev: false
+
+  /@types/cheerio/0.22.31:
+    resolution: {integrity: sha512-Kt7Cdjjdi2XWSfrZ53v4Of0wG3ZcmaegFXjMmz9tfNrZSkzzo36G0AL1YqSdcIA78Etjt6E609pt5h1xnQkPUw==}
+    dependencies:
+      '@types/node': 16.11.31
+    dev: true
 
   /@types/chrome/0.0.183:
     resolution: {integrity: sha512-sYI1qGY2oB6U5GFyuoSsVJsi2ytuEe92QrQTXQRwkISN8yn1gPY5qRq1XSwKN17yjvZTgxxeHw2ZoSHMti6qYg==}
@@ -6105,11 +6113,6 @@ packages:
       through2: 2.0.5
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /gulp-rename/2.0.0:
-    resolution: {integrity: sha512-97Vba4KBzbYmR5VBs9mWmK+HwIf5mj+/zioxfZhOKeXtx5ZjBk57KFlePf5nxq9QsTtFl0ejnHE3zTC9MHXqyQ==}
-    engines: {node: '>=4'}
     dev: true
 
   /gulp-replace/1.1.3:

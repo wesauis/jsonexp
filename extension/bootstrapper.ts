@@ -16,5 +16,7 @@ function readFile(filename) {
 
 console.debug("Loading frontend");
 readFile("index.html").then((html) => {
-  document.body.innerHTML = html;
+  const newDoc = document.open("text/html", "replace");
+  newDoc.write(html);
+  newDoc.close();
 });

@@ -4,8 +4,7 @@ const { bundleReactApp } = require("./tasks/bundle-react-app");
 const { copyAssets } = require("./tasks/copy-assets");
 const { generateConfig } = require("./tasks/generate-config");
 
-exports.default = parallel(
-  series(bundleReactApp, generateConfig),
-  copyAssets,
-  buildExtension
+exports.default = series(
+  parallel(bundleReactApp, copyAssets, buildExtension),
+  generateConfig
 );

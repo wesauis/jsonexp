@@ -1,3 +1,5 @@
+const config: { csp: string } = JSON.parse(`{{ config }}`);
+
 chrome.webRequest.onCompleted.addListener(
   onCompleted,
   { urls: ["<all_urls>"] },
@@ -21,6 +23,12 @@ function onCompleted({
   const contentType = find(responseHeaders, "name", "content-type");
   if (!contentType) return;
   if (!contentType.value?.includes("application/json")) return;
+
+  // patch csp
+  const csp = find(responseHeaders, "name", "content-security-policy");
+  console.log("oldcsp:", csp?.value);
+  if (csp) csp.value = config.csp;
+  console.log("newcsp:", csp?.value);
 
   console.info(`Intercepting ${method} "${url}"`);
   injectInterceptor(frameId, tabId);
