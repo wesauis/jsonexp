@@ -1,17 +1,17 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 const cheerio = require("cheerio");
 
-function extractJs(success) {
-  const html = fs.readFileSync("./dist/explorer/index.html", "utf-8");
+async function extractJs(success) {
+  const html = await fs.readFile("./dist/explorer/index.html", "utf-8");
   const $ = cheerio.load(html);
 
-  const script = $('script').html();
-  $('script').remove();
+  const script = $("script").html();
+  $("script").remove();
 
-  fs.writeFileSync('./dist/explorer/script.js', script, 'utf-8');
-  fs.writeFileSync('./dist/explorer/index.html', $.html(), 'utf-8');
-
-  success();
+  Promise.all([
+    fs.writeFile("./dist/explorer/script.js", script, "utf-8"),
+    fs.writeFile("./dist/explorer/index.html", $.html(), "utf-8"),
+  ]).then(success);
 }
 
 exports.extractJs = extractJs;

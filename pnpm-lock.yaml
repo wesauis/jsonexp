@@ -18,6 +18,7 @@ specifiers:
   gulp-inline-source: ^4.0.0
   gulp-replace: ^1.1.3
   gulp-template: ^5.0.0
+  gulp-zip: ^5.1.0
   inline-csp-hash: ^1.1.15
   jsonpath: ^1.1.1
   modern-css-reset: ^1.4.0
@@ -56,6 +57,7 @@ devDependencies:
   gulp-inline-source: 4.0.0
   gulp-replace: 1.1.3
   gulp-template: 5.0.0
+  gulp-zip: 5.1.0_gulp@4.0.2
   inline-csp-hash: 1.1.15
 
 packages:
@@ -3538,6 +3540,10 @@ packages:
       node-int64: 0.4.0
     dev: false
 
+  /buffer-crc32/0.2.13:
+    resolution: {integrity: sha1-DTM+PwDqxQqhRUq9MO+MKl2ackI=}
+    dev: true
+
   /buffer-equal/1.0.0:
     resolution: {integrity: sha1-WWFrSYME1Var1GaWayLu2j7KX74=}
     engines: {node: '>=0.4.0'}
@@ -5920,6 +5926,13 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
+  /get-stream/5.2.0:
+    resolution: {integrity: sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA==}
+    engines: {node: '>=8'}
+    dependencies:
+      pump: 3.0.0
+    dev: true
+
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -6134,6 +6147,23 @@ packages:
       plugin-error: 0.1.2
       safe-buffer: 5.2.1
       through2: 2.0.5
+    dev: true
+
+  /gulp-zip/5.1.0_gulp@4.0.2:
+    resolution: {integrity: sha512-XZr/y91IliK/SpR74g3TkZejGkGEmK7CSDjSghT1jXshgO+dFvpLIz9w9fpuwkew6i7k4F+G24TubNgq1ISzEw==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      gulp: '>=4'
+    peerDependenciesMeta:
+      gulp:
+        optional: true
+    dependencies:
+      get-stream: 5.2.0
+      gulp: 4.0.2
+      plugin-error: 1.0.1
+      through2: 3.0.2
+      vinyl: 2.2.1
+      yazl: 2.5.1
     dev: true
 
   /gulp/4.0.2:
@@ -9508,6 +9538,13 @@ packages:
       once: 1.4.0
     dev: true
 
+  /pump/3.0.0:
+    resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
+    dependencies:
+      end-of-stream: 1.4.4
+      once: 1.4.0
+    dev: true
+
   /pumpify/1.5.1:
     resolution: {integrity: sha512-oClZI37HvuUJJxSKKrC17bZ9Cu0ZYhEAGPsPUy9KlMUmv9dKX2o77RUmq7f3XjIxbwyGwYzbzQ1L2Ks8sIradQ==}
     dependencies:
@@ -11019,6 +11056,13 @@ packages:
       xtend: 4.0.2
     dev: true
 
+  /through2/3.0.2:
+    resolution: {integrity: sha512-enaDQ4MUyP2W6ZyT6EsMzqBPZaM/avg8iuo+l2d3QCs0J+6RaqkHV/2/lOwDTueBHeJ/2LG9lrLW3d5rWPucuQ==}
+    dependencies:
+      inherits: 2.0.4
+      readable-stream: 3.6.0
+    dev: true
+
   /through2/4.0.2:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
     dependencies:
@@ -12002,6 +12046,12 @@ packages:
       which-module: 1.0.0
       y18n: 3.2.2
       yargs-parser: 5.0.1
+    dev: true
+
+  /yazl/2.5.1:
+    resolution: {integrity: sha512-phENi2PLiHnHb6QBVot+dJnaAZ0xosj7p3fWl+znIjBDlnMI2PsZCJZ306BPTFOaHf5qdDEI8x5qFrSOBN5vrw==}
+    dependencies:
+      buffer-crc32: 0.2.13
     dev: true
 
   /yocto-queue/0.1.0:
