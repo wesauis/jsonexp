@@ -36,7 +36,7 @@ function bundleReactApp() {
             ),
         })
       )
-      .pipe(dest("./dist"))
+      .pipe(dest("./dist/explorer"))
   );
 }
 

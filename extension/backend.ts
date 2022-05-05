@@ -1,4 +1,6 @@
-const config: { csp: string } = JSON.parse(`{{ config }}`);
+chrome.action.onClicked.addListener(function (tab) {
+  injectInterceptor(tab.id);
+});
 
 chrome.webRequest.onCompleted.addListener(
   onCompleted,
@@ -24,26 +26,29 @@ function onCompleted({
   if (!contentType) return;
   if (!contentType.value?.includes("application/json")) return;
 
-  // patch csp
-  const csp = find(responseHeaders, "name", "content-security-policy");
-  console.log("oldcsp:", csp?.value);
-  if (csp) csp.value = config.csp;
-  console.log("newcsp:", csp?.value);
-
   console.info(`Intercepting ${method} "${url}"`);
-  injectInterceptor(frameId, tabId);
+  injectInterceptor(tabId);
 }
 
 function find(array, key, value) {
   return array.find((item) => item[key] === value);
 }
 
-function injectInterceptor(frameId, tabId) {
-  chrome.scripting.executeScript(
-    {
-      target: { frameIds: [frameId], tabId },
-      files: ["bootstrapper.js"],
-    },
-    () => console.log("Injected bootstrapper")
-  );
+function injectInterceptor(tabId) {
+  chrome.scripting.executeScript({
+    target: { tabId },
+    files: ["bootstrapper.js"],
+  });
 }
+
+const VOID = undefined;
+chrome.runtime.onMessage.addListener(({ type }, sender, sendResponse) => {
+  if (type === 'RENDER_PAGE') {
+    chrome.scripting.executeScript({
+      target: { tabId: sender.tab.id },
+      files: ["explorer/script.js"],
+    });
+  }
+
+  sendResponse(VOID);
+});

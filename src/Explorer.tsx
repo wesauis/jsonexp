@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import GridView from "./grid/GridView";
 import Breadcrumb from "./path/Breadcrumb";
 import PathContext, { useNewPathContext } from "./path/PathContext";
-import sample from "./sample.json";
 
 function Explorer() {
+  const [json, setJson] = useState({});
   const pathContext = useNewPathContext();
 
   useEffect(() => {
+    setJson((window as any).originalJson);
+
     const hash = window.location.hash.substring(1);
     if (!hash.startsWith("$")) return;
     if (hash == pathContext.path) return;
@@ -19,7 +21,7 @@ function Explorer() {
   return (
     <PathContext.Provider value={pathContext}>
       <Breadcrumb />
-      <GridView json={sample} />
+      <GridView json={json} />
     </PathContext.Provider>
   );
 }

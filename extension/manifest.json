@@ -11,9 +11,13 @@
     "192": "logo192.png",
     "512": "logo512.png"
   },
+  "action": {
+    "default_icon": "logo192.png"
+  },
   "permissions": [
     "webRequest",
-    "scripting"
+    "scripting",
+    "activeTab"
   ],
   "host_permissions": [
     "*://*/*",
@@ -26,7 +30,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "index.html"
+        "explorer/*"
       ],
       "matches": [
         "*://*/*",
