@@ -1,4 +1,5 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactNode } from "react";
+import PathButton from "../path/PathButton";
 import "./GridObject.scss";
 import GridScalar from "./GridScalar";
 import { Querryble } from "./GridView";
@@ -20,7 +21,7 @@ const GridObject: FC<GridObjectProps> = ({ path, object }) => {
   );
 };
 
-function mapEntry(path: string, key: string, value: any): ReactElement {
+function mapEntry(path: string, key: string, value: any): ReactNode {
   path += `.${key}`;
 
   if (mapType(value) === GridType.Scalar) {
@@ -34,13 +35,13 @@ function renderScalar(
   path: string,
   key: string,
   value: null | number | string | boolean
-): ReactElement {
+): ReactNode {
   return (
     <tr key={key}>
       <td>
-        <a href={`#${path}`}>
+        <PathButton path={path}>
           <span className="json-key">{key}</span>
-        </a>
+        </PathButton>
       </td>
       <td>
         <GridScalar value={value} />
@@ -49,19 +50,19 @@ function renderScalar(
   );
 }
 
-function renderObject(path: string, key: string, value: [] | {}): ReactElement {
+function renderObject(path: string, key: string, value: [] | {}): ReactNode {
   const isArray = Array.isArray(value);
   const length = isArray ? value.length : Object.keys(value).length;
 
   return (
     <tr key={key}>
       <td className="object-value" colSpan={2}>
-        <a href={`#${path}`}>
+        <PathButton path={path}>
           <span className={`json-key`}>{key}</span>
           <span className="length">
             {isArray ? `[${length}]` : `{${length}}`}
           </span>
-        </a>
+        </PathButton>
         <MapType path={path} json={value} />
       </td>
     </tr>

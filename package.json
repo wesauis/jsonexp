@@ -1,7 +1,7 @@
 {
   "name": "jsonexp",
   "description": "JSON Explorer",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "license": "MIT",
   "author": "wesauis",
   "keywords": [],
@@ -17,6 +17,8 @@
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
+    "dist": "gulp --series clean dist",
+    "bundle": "gulp bundle",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -56,6 +58,17 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@types/jsonpath": "^0.2.0"
+    "@types/cheerio": "^0.22.31",
+    "@types/chrome": "^0.0.183",
+    "@types/gulp": "^4.0.9",
+    "@types/jsonpath": "^0.2.0",
+    "cheerio": "^1.0.0-rc.10",
+    "gulp": "^4.0.2",
+    "gulp-esbuild": "^0.10.3",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-template": "^5.0.0",
+    "gulp-zip": "^5.1.0",
+    "inline-csp-hash": "^1.1.15"
   }
 }
